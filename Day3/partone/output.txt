@@ -1,0 +1,19 @@
+"975"
+Number is 975: 
+"95"
+Number is 95: 
+"717"
+Number is 717: SUCCESS
+"747"
+Number is 747: SUCCESS
+"622"
+Number is 622: 
+"47"
+Number is 47: SUCCESS
+"701"
+Number is 701: SUCCESS
+"610"
+Number is 610: SUCCESS
+"252"
+Number is 252: 
+"660*"
