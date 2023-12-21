@@ -35,5 +35,7 @@ fn main() {
     }
     categories.push(category_range);
 
-    
+    for i in categories {
+        println!("{:?}", i);
+    }
 }
