@@ -23,10 +23,6 @@ fn main() {
             continue;
         }
 
-        // if line[0..1].chars().into_iter().next().unwrap().is_numeric() {
-        //     println!("{}", line[0..1].chars().into_iter().next().unwrap().is_numeric());
-        // }
-
         let range: Vec<i64> = line.split_whitespace()
             .map(|x| x.parse::<i64>().unwrap())
             .collect();
