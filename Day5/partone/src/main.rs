@@ -19,7 +19,8 @@ fn main() {
                 categories.push(category_range);
                 category_range = Vec::new();    
             }
-            println!("{}", scanner.read());
+            
+            scanner.read();
             continue;
         }
 
@@ -31,7 +32,27 @@ fn main() {
     }
     categories.push(category_range);
 
-    for i in categories {
-        println!("{:?}", i);
+    let mut seeds: Vec<(i64, bool)> = seeds.iter().map(|x| (*x, false)).collect();
+
+    for category in categories.iter() {
+        for range in category.iter() {
+            let source_start = range[1];
+            let dest_start = range[0];
+            let length = range[2];
+            let source_end = source_start + length - 1;
+
+            for (seed, bool) in seeds.iter_mut() {
+                if *seed >= source_start && *seed <= source_end && *bool == false {
+                    *seed = *seed - source_start + dest_start;
+                    *bool = true;
+                }
+            }
+        }
+
+        for (_, bool) in seeds.iter_mut() {
+            *bool = false;
+        }
     }
+
+    println!("{}", seeds.iter().map(|x| x.0).collect::<Vec<i64>>().iter().min().unwrap());
 }
